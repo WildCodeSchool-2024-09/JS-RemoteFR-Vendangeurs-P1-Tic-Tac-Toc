@@ -1,0 +1,156 @@
+html, body {
+    height: 100%; /* Assure que la page occupe toute la hauteur de la fenêtre */
+    margin: 0;    /* Enlève les marges par défaut */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espace le contenu avec footer en bas */
+}
+
+/* Contenu principal */
+.main-content {
+    flex-grow: 1; /* Occupe l'espace restant au-dessus des améliorations */
+}
+
+/* Layout pour aligner le titre à gauche et les améliorations à droite */
+.upgrade-layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 250px;
+    
+}
+/* Titre pour les améliorations */
+.upgrade-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px; /* Un petit espace sous le titre */;
+    margin-left: -850px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+
+
+/* Alignement des éléments (curseur, grand-mère, etc.) en ligne et décalés vers la droite */
+.upgrade-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+/* Style des éléments */
+.upgrades-section .upgrade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upgrades-section .upgrade-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Bouton centré en dessous */
+#toggle-stats {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #abadab;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px auto 80px auto;
+    display: block;
+}
+/* Style du menu déroulant */
+#stats-menu {
+    display: none; /* Caché par défaut */
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    width: 200px; /* Ajuste la largeur du menu */
+    margin-top: 10px;
+}
+
+#stats-menu ul {
+    list-style-type: none; /* Retire les puces de liste */
+    padding: 0;
+    margin: 0;
+}
+
+#stats-menu ul li {
+    margin-bottom: 10px;
+}
+
+
+#stats {
+    display: none;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Style pour le footer */
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Style pour le conteneur des étoiles avec disposition en grille */
+.stars {
+    display: grid;
+    grid-template-columns: repeat(5, 20px); /* Crée 5 colonnes pour aligner les étoiles */
+    grid-template-rows: repeat(2, 20px); /* Crée 2 lignes pour les étoiles */
+    gap: -100px; /* Espacement entre les étoiles */
+    justify-content: center; /* Centre les étoiles dans le conteneur */
+    margin-top: 5px;
+}
+
+/* Positionnement des étoiles sur la première ligne */
+.stars img:nth-child(1) {
+    grid-column: 1; /* Place la 1ère étoile dans la 1ère colonne */
+    grid-row: 1; /* Sur la première ligne */
+}
+
+.stars img:nth-child(2) {
+    grid-column: 3; /* Place la 2ème étoile dans la 3ème colonne */
+    grid-row: 1; /* Sur la première ligne */
+}
+
+.stars img:nth-child(3) {
+    grid-column: 5; /* Place la 3ème étoile dans la 5ème colonne */
+    grid-row: 1; /* Sur la première ligne */
+}
+
+/* Positionnement des étoiles sur la deuxième ligne */
+.stars img:nth-child(4) {
+    grid-column: 2; /* Place la 4ème étoile entre la 1ère et la 2ème étoile */
+    grid-row: 2; /* Sur la deuxième ligne */
+}
+
+.stars img:nth-child(5) {
+    grid-column: 4; /* Place la 5ème étoile entre la 2ème et la 3ème étoile */
+    grid-row: 2; /* Sur la deuxième ligne */
+}
+
+/* Style pour les icônes d'étoile */
+.star-icon {
+    width: 20px;
+    height: 20px;
+}
