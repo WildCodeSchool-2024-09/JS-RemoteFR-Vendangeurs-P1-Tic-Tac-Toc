@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    line-height: 1.5;
+    outline: solid red;
+    font-size: 1rem;
+    font-family: 'Kavoon';
+}
+
+.image {
+    width: 30%;
+}
+
+/* multi */
+.multiplicateur {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+/* boutons */
+.inactif {
+    border: none;
+}
+
+.actif {
+    border: none;
+    background-color: darkgrey;
+}
+
+/* cartes */
+.construction {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.container_carte {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    
+}
+.carte {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.carte p {
+    font-size: 2rem;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}
