@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   font-family: "Kavoon";
@@ -202,6 +203,7 @@ h3 {
 
 /* Style pour le footer */
 .footer {
+
   width: 100%;
   background-color: #333;
   color: var(--header-color-light);
@@ -220,6 +222,7 @@ h3 {
   gap: -100px; /* Espacement entre les étoiles */
   justify-content: center; /* Centre les étoiles dans le conteneur */
   margin-top: 5px;
+
 }
 
 /* Positionnement des étoiles sur la première ligne */
