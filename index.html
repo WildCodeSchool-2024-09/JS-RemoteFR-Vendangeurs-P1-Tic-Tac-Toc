@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./darkmode.js" defer></script>
+    <title>Tic Tac Toc</title>
+  </head>
+  <body>
+    <header>
+      <button id="theme-switch">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+          />
+        </svg>
+      </button>
+      <h1>Cookie Clicker</h1>
+    </header>
+    <main>
+      <section class="banque">
+        <h2 id="banqueCookies">
+          <span id="nombreDeCookiesBanque"> 0 </span> cookies
+        </h2>
+        <h3 class="ParSeconde">
+          Par seconde :
+          <span id="nombreDeCookiesSeconde">0</span>
+          Cps
+        </h3>
+      </section>
+      <section class="cookie">
+        <button id="cookieBouton">
+          <img src="./assets/img/click/CookieHeureux.png" alt="Cookie heureux" />
+        </button>
+        <section class="grand_mere">
+          <div class="multiplicateur">
+              <button class="actif">x1</button>
+              <button class="inactif">x10</button>
+              <button class="inactif">x100</button>
+          </div>
+          <div class="construction">
+              <button class="container_carte" id="container_carte">
+                  <div class="carte">
+                      <img src="./assets/img/constructions/cursor.png" alt="curseur" class="image">
+                      <p>0</p>
+                  </div>
+                  <span>0€</span>
+              </button>
+              <button class="container_carte">
+                  <div class="carte">
+                      <img src="./assets/img/constructions/gm.png" alt="grand_mere" class="image">
+                      <p>0</p>
+                  </div>
+                  <span>0€</span>
+              </button>
+              <button class="container_carte">
+                  <div class="carte">
+                      <img src="./assets/img/constructions/ferme.png" alt="ferme" class="image">
+                      <p>0</p>
+                  </div>
+                  <span>0€</span>
+              </button>
+              <button class="container_carte">
+                  <div class="carte">
+                      <img src="./assets/img/constructions/usine.png" alt="usine" class="image">
+                      <p>0</p>
+                  </div>
+                  <span>0€</span>
+              </button>
+          </div>
+
+      </section>
+      </section>
+      <div class="upgrade-layout">
+        <h2 class="upgrade-title">Améliorations:</h2>
+        <div class="upgrade-container">
+            <div class="upgrade">
+                <img src="./assets/img/upgrades/Curseur.svg" alt="Curseur" class="upgrade-icon">
+                <div class="stars">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                </div>
+            </div>
+            <div class="upgrade">
+                <img src="./assets/img/upgrades/GM.svg" alt="Grand-mère" class="upgrade-icon">
+                <div class="stars">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                </div>
+            </div>
+            <div class="upgrade">
+                <img src="./assets/img/upgrades/Ferme.svg" alt="Ferme" class="upgrade-icon">
+               <div class="stars">    
+                <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+               </div>
+            </div>
+            <div class="upgrade">
+                <img src="./assets/img/upgrades/Usine.svg" alt="Usine" class="upgrade-icon">
+                <div class="stars">    
+                    <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                        <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                        <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                        <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                        <img src="./assets/img/upgrades/Star.svg" alt="Étoile" class="star-icon">
+                   </div>
+          </div>
+        </div>
+    </div>
+    <button id="toggle-stats">statistiques</button>
+    <div id="stats" class="hidden">
+        <ul>
+        <li>Total de cookies générés: <span id="total-cookies">0</span></li>
+        <li>Cookies par seconde: <span id="cookies-per-second">0</span></li>
+    </ul>
+    </div>
+  </div>
+    </main>
+
+<!-- Footer en bas de la page -->
+<footer class="footer">
+  <p>&copy; 2024 Cookies Clicker App | Tous droits réservés</p>
+</footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
