@@ -5,6 +5,17 @@ let cookieMultiplieur = 1;
 
 // FONCTIONS
 
+// ouvrir modale
+function openModal() {
+  document.querySelector(".overlay").style.display = "block";
+  document.querySelector(".modal").classList.add("modal--open");
+}
+// fermer la modale
+function closeModal() {
+  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".modal").classList.remove("modal--open");
+}
+
 // Compteur cookie
 const buttonClick = document.querySelector("#cookieBouton");
 
