@@ -1,156 +1,333 @@
-html, body {
-    height: 100%; /* Assure que la page occupe toute la hauteur de la fenêtre */
-    margin: 0;    /* Enlève les marges par défaut */
-    display: flex;
-    flex-direction: column;
+
+* {
+  box-sizing: border-box;
+  font-family: "Kavoon";
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Espace le contenu avec footer en bas */
+/* VARIABLES  */
+
+:root {
+  --main-color-light: rgb(234, 234, 234);
+  --text-color-light: black;
+  --main-color-dark: rgb(68, 68, 68);
+  --text-color-dark: whitesmoke;
+  --header-color-light: rgb(212, 212, 212);
+  --header-color-dark: rgb(51, 51, 51);
 }
+
+/* HEADER  */
+
+/* DARK MODE  */
+
+body {
+  margin: 0;
+  background-color: var(--main-color-light);
+  color: var(--text-color-light);
+}
+
+#theme-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(103, 103, 103);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+}
+
+#theme-switch svg {
+  fill: var(--text-color-light);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+/* FIN DARK MODE  */
+
+header {
+  background-color: var(--header-color-light);
+  color: var(--text-color-light);
+  width: 100vw;
+  height: 20vh;
+}
+header.darkmode {
+  background-color: var(--header-color-dark);
+  color: var(--text-color-dark);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* MAIN  */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--main-color-light);
+}
+
+main.darkmode {
+  background-color: var(--main-color-dark);
+  color: var(--text-color-dark);
+}
+
+h2 {
+  font-size: 3rem;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+}
+
+#cookieBouton {
+  border-radius: 50%;
+  border: 0;
+  background-color: rgba(255, 0, 0, 0);
+  width: 100%;
+  margin: 0;
+}
+
+#cookieBouton:active {
+  transform: scale(1.05);
+}
+
+#cookieBouton img {
+  width: 90%;
+}
+
+/* MATEUSZ  */
 
 /* Contenu principal */
 .main-content {
-    flex-grow: 1; /* Occupe l'espace restant au-dessus des améliorations */
+  flex-grow: 1; /* Occupe l'espace restant au-dessus des améliorations */
 }
 
 /* Layout pour aligner le titre à gauche et les améliorations à droite */
 .upgrade-layout {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding-top: 250px;
-    
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 250px;
 }
 /* Titre pour les améliorations */
 .upgrade-title {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 10px; /* Un petit espace sous le titre */;
-    margin-left: -850px;
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px; /* Un petit espace sous le titre */
+  margin-left: -850px;
+  font-family: "Arial", sans-serif;
+  margin-top: 20px;
 }
-
-
 
 /* Alignement des éléments (curseur, grand-mère, etc.) en ligne et décalés vers la droite */
 .upgrade-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* Style des éléments */
 .upgrades-section .upgrade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .upgrades-section .upgrade-icon {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 /* Bouton centré en dessous */
 #toggle-stats {
-    width: 200px;
-    padding: 10px 20px;
-    background-color: #abadab;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 20px auto 80px auto;
-    display: block;
+  width: 200px;
+  padding: 10px 20px;
+  background-color: #abadab;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto 80px auto;
+  display: block;
 }
 /* Style du menu déroulant */
 #stats-menu {
-    display: none; /* Caché par défaut */
-    background-color: #f7f7f7;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: relative;
-    width: 200px; /* Ajuste la largeur du menu */
-    margin-top: 10px;
+  display: none; /* Caché par défaut */
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  width: 200px; /* Ajuste la largeur du menu */
+  margin-top: 10px;
 }
 
 #stats-menu ul {
-    list-style-type: none; /* Retire les puces de liste */
-    padding: 0;
-    margin: 0;
+  list-style-type: none; /* Retire les puces de liste */
+  padding: 0;
+  margin: 0;
 }
 
 #stats-menu ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-
 #stats {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Style pour le footer */
 .footer {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+
+  width: 100%;
+  background-color: #333;
+  color: var(--header-color-light);
+  text-align: center;
+  padding: 10px 0;
 }
 
 /* Style pour le conteneur des étoiles avec disposition en grille */
 .stars {
-    display: grid;
-    grid-template-columns: repeat(5, 20px); /* Crée 5 colonnes pour aligner les étoiles */
-    grid-template-rows: repeat(2, 20px); /* Crée 2 lignes pour les étoiles */
-    gap: -100px; /* Espacement entre les étoiles */
-    justify-content: center; /* Centre les étoiles dans le conteneur */
-    margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    20px
+  ); /* Crée 5 colonnes pour aligner les étoiles */
+  grid-template-rows: repeat(2, 20px); /* Crée 2 lignes pour les étoiles */
+  gap: -100px; /* Espacement entre les étoiles */
+  justify-content: center; /* Centre les étoiles dans le conteneur */
+  margin-top: 5px;
+
 }
 
 /* Positionnement des étoiles sur la première ligne */
 .stars img:nth-child(1) {
-    grid-column: 1; /* Place la 1ère étoile dans la 1ère colonne */
-    grid-row: 1; /* Sur la première ligne */
+  grid-column: 1; /* Place la 1ère étoile dans la 1ère colonne */
+  grid-row: 1; /* Sur la première ligne */
 }
 
 .stars img:nth-child(2) {
-    grid-column: 3; /* Place la 2ème étoile dans la 3ème colonne */
-    grid-row: 1; /* Sur la première ligne */
+  grid-column: 3; /* Place la 2ème étoile dans la 3ème colonne */
+  grid-row: 1; /* Sur la première ligne */
 }
 
 .stars img:nth-child(3) {
-    grid-column: 5; /* Place la 3ème étoile dans la 5ème colonne */
-    grid-row: 1; /* Sur la première ligne */
+  grid-column: 5; /* Place la 3ème étoile dans la 5ème colonne */
+  grid-row: 1; /* Sur la première ligne */
 }
 
 /* Positionnement des étoiles sur la deuxième ligne */
 .stars img:nth-child(4) {
-    grid-column: 2; /* Place la 4ème étoile entre la 1ère et la 2ème étoile */
-    grid-row: 2; /* Sur la deuxième ligne */
+  grid-column: 2; /* Place la 4ème étoile entre la 1ère et la 2ème étoile */
+  grid-row: 2; /* Sur la deuxième ligne */
 }
 
 .stars img:nth-child(5) {
-    grid-column: 4; /* Place la 5ème étoile entre la 2ème et la 3ème étoile */
-    grid-row: 2; /* Sur la deuxième ligne */
+  grid-column: 4; /* Place la 5ème étoile entre la 2ème et la 3ème étoile */
+  grid-row: 2; /* Sur la deuxième ligne */
 }
 
 /* Style pour les icônes d'étoile */
 .star-icon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* AURELIA  */
+
+.image {
+  width: 30%;
+}
+
+/* multi */
+.multiplicateur {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+/* boutons */
+.inactif {
+  border: none;
+}
+
+.actif {
+  border: none;
+  background-color: darkgrey;
+}
+
+/* cartes */
+.construction {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.container_carte {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+.carte {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.carte p {
+  font-size: 2rem;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+}
+
+.upgrade.darkmode {
+  fill: var(--text-color-dark);
+}
+
+.upgrade-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.upgrade-title {
+  color: var(--text-color-light);
+}
+
+@media screen and(min-width: 992px) {
+  .upgrade-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
