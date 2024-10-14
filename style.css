@@ -84,6 +84,21 @@ header.darkmode {
 }
 
 /* bouton règles  */
+#open_modal_button {
+  margin: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3 all ease-in-out;
+  background-color: var(--main-color-dark);
+  color: var(--text-color-dark);
+}
+
+#open_modal_button:hover {
+  background-color: var(--main-color-light);
+  color: var(--text-color-light);
+}
 
 #regles {
   background-color: var(--main-color-dark);
