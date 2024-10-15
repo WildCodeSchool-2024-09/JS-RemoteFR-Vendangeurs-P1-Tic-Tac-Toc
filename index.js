@@ -109,55 +109,55 @@ let usinePrice = 500;
 const buttonCurseur = document.querySelector("#buttonCurseur");
 
 buttonCurseur.addEventListener("click", () => {
-    if (clickCookie >= curseurPrice) {
-        curseur += 1;
-        clickCookie -= curseurPrice; 
-        document.getElementById("nbrCurseur").innerHTML = curseur; 
-        automaticClicks += 1; 
-        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    }
+  if (clickCookie >= curseurPrice) {
+    curseur += 1;
+    clickCookie -= curseurPrice;
+    document.getElementById("nbrCurseur").innerHTML = curseur;
+    automaticClicks += 1;
+    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  }
 });
 
 const buttonGm = document.querySelector("#buttonGm");
 
 buttonGm.addEventListener("click", () => {
-    if (clickCookie >= gmPrice) {
-        gm += 1;
-        clickCookie -= gmPrice;
-        document.getElementById("nbrGm").innerHTML = gm;
-        automaticClicks += 5;
-        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    }
+  if (clickCookie >= gmPrice) {
+    gm += 1;
+    clickCookie -= gmPrice;
+    document.getElementById("nbrGm").innerHTML = gm;
+    automaticClicks += 5;
+    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  }
 });
 
 const buttonFerme = document.querySelector("#buttonFerme");
 
 buttonFerme.addEventListener("click", () => {
-    if (clickCookie >= fermePrice) {
-        ferme += 1;
-        clickCookie -= fermePrice;
-        document.getElementById("nbrFerme").innerHTML = ferme;
-        automaticClicks += 10;
-        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    }
+  if (clickCookie >= fermePrice) {
+    ferme += 1;
+    clickCookie -= fermePrice;
+    document.getElementById("nbrFerme").innerHTML = ferme;
+    automaticClicks += 10;
+    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  }
 });
 
 const buttonUsine = document.querySelector("#buttonUsine");
 
 buttonUsine.addEventListener("click", () => {
-    if (clickCookie >= usinePrice) {
-        usine += 1;
-        clickCookie -= usinePrice;
-        document.getElementById("nbrUsine").innerHTML = usine;
-        automaticClicks += 20;
-        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    }
+  if (clickCookie >= usinePrice) {
+    usine += 1;
+    clickCookie -= usinePrice;
+    document.getElementById("nbrUsine").innerHTML = usine;
+    automaticClicks += 20;
+    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  }
 });
 
 // Fonction clics automatiques
 function automaticClick() {
-    clickCookie += automaticClicks * cookieMultiplieur;
-    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  clickCookie += automaticClicks * cookieMultiplieur;
+  document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
 }
 
 setInterval(automaticClick, 1000);
