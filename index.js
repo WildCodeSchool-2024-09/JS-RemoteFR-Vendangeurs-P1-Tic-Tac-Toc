@@ -96,12 +96,68 @@ toggleStatsButton.addEventListener("click", function () {
 
 // AURELIA
 
-const container = document.querySelector("#container_card");
-const card = `<button class="container_carte" id="container_carte">
-                    <div class="carte">
-                        <img src="assets/png/cursor.png" alt="curseur" class="image">
-                        <p>0</p>
-                    </div>
-                    <span>0€</span>
-                </button>`;
-console.log(card);
+let curseur = 0;
+let gm = 0;
+let ferme = 0;
+let usine = 0;
+let automaticClicks = 0;
+let curseurPrice = 10;
+let gmPrice = 50;
+let fermePrice = 100;
+let usinePrice = 500;
+
+const buttonCurseur = document.querySelector("#buttonCurseur");
+
+buttonCurseur.addEventListener("click", () => {
+    if (clickCookie >= curseurPrice) {
+        curseur += 1;
+        clickCookie -= curseurPrice; 
+        document.getElementById("nbrCurseur").innerHTML = curseur; 
+        automaticClicks += 1; 
+        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    }
+});
+
+const buttonGm = document.querySelector("#buttonGm");
+
+buttonGm.addEventListener("click", () => {
+    if (clickCookie >= gmPrice) {
+        gm += 1;
+        clickCookie -= gmPrice;
+        document.getElementById("nbrGm").innerHTML = gm;
+        automaticClicks += 5;
+        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    }
+});
+
+const buttonFerme = document.querySelector("#buttonFerme");
+
+buttonFerme.addEventListener("click", () => {
+    if (clickCookie >= fermePrice) {
+        ferme += 1;
+        clickCookie -= fermePrice;
+        document.getElementById("nbrFerme").innerHTML = ferme;
+        automaticClicks += 10;
+        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    }
+});
+
+const buttonUsine = document.querySelector("#buttonUsine");
+
+buttonUsine.addEventListener("click", () => {
+    if (clickCookie >= usinePrice) {
+        usine += 1;
+        clickCookie -= usinePrice;
+        document.getElementById("nbrUsine").innerHTML = usine;
+        automaticClicks += 20;
+        document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    }
+});
+
+// Fonction clics automatiques
+function automaticClick() {
+    clickCookie += automaticClicks * cookieMultiplieur;
+    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+}
+
+setInterval(automaticClick, 1000);
