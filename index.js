@@ -1,7 +1,7 @@
 // VARIABLES
 
 let clickCookie = 0;
-let cookieMultiplieur = 1;
+let cookieMultiplieur = 1000;
 let Cps = 0;
 
 // constructions
@@ -22,6 +22,11 @@ let multiplieurCursor = 1;
 let multiplieurGm = 1;
 let multiplieurFarm = 1;
 let multiplieurUsine = 1;
+
+// statistiques
+
+let totalCookies = 0;
+let cookiesPerClick = 1;
 
 // FONCTIONS
 
@@ -101,20 +106,7 @@ buttonClick.addEventListener("click", () => {
   document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
 });
 
-// Mateusz
-
-const toggleStatsButton = document.getElementById("toggle-stats");
-const statsMenu = document.getElementById("stats-menu");
-
-toggleStatsButton.addEventListener("click", function () {
-  if (statsMenu.style.display === "none" || statsMenu.style.display === "") {
-    statsMenu.style.display = "block"; // Affiche le menu
-  } else {
-    statsMenu.style.display = "none"; // Cache le menu
-  }
-});
-
-// AURELIA
+// CONSTRUCTIONS
 
 const buttonCurseur = document.querySelector("#buttonCurseur");
 buttonCurseur.addEventListener("click", () => {
@@ -179,3 +171,67 @@ function automaticClick() {
 }
 
 setInterval(automaticClick, 1000);
+
+// UPGRADES
+
+// Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
+function updateStars(upgradeType, numberOfUpgrades) {
+  const starIcons = document.querySelectorAll(`.${upgradeType} .star-icon`);
+  starIcons.forEach((star, index) => {
+    if (index < numberOfUpgrades) {
+      star.classList.add("active-star"); // Allume l'étoile si le nombre d'améliorations le permet
+    } else {
+      star.classList.remove("active-star"); // Éteint l'étoile si ce n'est pas encore atteint
+    }
+  });
+}
+
+// MATEUSZ Appel de la fonction d'allumage des étoiles pour chaque type d'amélioration
+updateStars("curseur", curseur);
+updateStars("grand-mère", gm);
+updateStars("ferme", ferme);
+updateStars("usine", usine);
+
+// STATISTIQUES
+
+const toggleStatsButton = document.getElementById("toggle-stats");
+const statsMenu = document.getElementById("stats-menu");
+
+toggleStatsButton.addEventListener("click", function () {
+  if (statsMenu.style.display === "none" || statsMenu.style.display === "") {
+    statsMenu.style.display = "block"; // Affiche le menu
+  } else {
+    statsMenu.style.display = "none"; // Cache le menu
+  }
+});
+
+// MATEUSZ Mettre à jour les statistiques dans la modale
+function updateModalStats() {
+  document.getElementById("modal-total-cookies").textContent = totalCookies;
+  document.getElementById("modal-total-buildings").textContent =
+    curseur + gm + ferme + usine;
+  document.getElementById("modal-cookies-per-click").textContent =
+    cookiesPerClick;
+  document.getElementById("modal-total-clicks").textContent = totalClicks;
+}
+
+// MATEUSZ Afficher la modale
+const modal = document.getElementById("stats-modal");
+const closeBtn = document.querySelector(".close");
+
+document.getElementById("toggle-stats").addEventListener("click", function () {
+  updateModalStats(); // Met à jour les statistiques avant d'afficher la modale
+  modal.style.display = "block"; // Affiche la modale
+});
+
+// MATEUSZ Fermer la modale quand on clique sur le bouton de fermeture
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// MATEUSZ Fermer la modale quand on clique en dehors de celle-ci
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
