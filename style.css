@@ -437,6 +437,8 @@ span {
 /* MATEUSZ Style pour les étoiles allumées */
 .active-star {
     filter: brightness(1.5); /* Rend l'étoile plus lumineuse */
+    fill: gold; /* Change la couleur de l'étoile en doré */
+    filter: hue-rotate(45deg) brightness(1.5); /* Effet doré et lumineux */
   }
 /* MATEUSZ Style pour la modale */
 .stats-modal {
@@ -476,3 +478,9 @@ span {
   }
 
   /*        ------          */
+/* Mateusz */
+  .gold-star {
+     filter: brightness(1.5); /* Crée un effet doré avec un filtre */
+    fill: gold; 
+  }
+ 

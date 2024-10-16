@@ -124,6 +124,8 @@ buttonCurseur.addEventListener("click", () => {
     document.getElementById("nbrCurseur").innerHTML = curseur;
     automaticClicks += 1 * multiplieurCursor;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    // Mateusz Mise a jour les étoiles après l'achat
+    updateStars('curseur', curseur);
   }
 });
 
@@ -136,6 +138,8 @@ buttonGm.addEventListener("click", () => {
     document.getElementById("nbrGm").innerHTML = gm;
     automaticClicks += 5 * multiplieurGm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    // Mateusz Mise a jour les étoiles après l'achat
+    updateStars('grand-mère', gm);
   }
 });
 
@@ -148,6 +152,8 @@ buttonFerme.addEventListener("click", () => {
     document.getElementById("nbrFerme").innerHTML = ferme;
     automaticClicks += 10 * multiplieurFarm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+   //Mateusz  Met à jour les étoiles pour les fermes
+    updateStars('ferme', ferme);
   }
 });
 
@@ -160,6 +166,8 @@ buttonUsine.addEventListener("click", () => {
     document.getElementById("nbrUsine").innerHTML = usine;
     automaticClicks += 20 * multiplieurUsine;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    // Mateusz Met à jour les étoiles pour les usines
+    updateStars('usine', usine);
   }
 });
 
@@ -174,15 +182,34 @@ setInterval(automaticClick, 1000);
 
 // MATEUSZ Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
 function updateStars(upgradeType, numberOfUpgrades) {
+  // Définir les seuils d'allumage des étoiles
+  const starThresholds = {
+    curseur: 10, // Une étoile tous les 10 curseurs
+    'grand-mère': 5, // Une étoile tous les 5 grand-mères
+     ferme: 3, // Une étoile tous les 3 fermes
+    usine: 2 // Une étoile tous les 2 usines
+  };
+  
+  // Récupérer les étoiles de l'amélioration correspondante
   const starIcons = document.querySelectorAll(`.${upgradeType} .star-icon`);
+  // Si aucun starIcons n'est trouvé, arrête la fonction
+  if (starIcons.length === 0) {
+    console.error(`Pas d'étoiles trouvées pour ${upgradeType}`);
+    return;
+  }
+  // Calculer combien d'étoiles doivent être allumées en fonction du nombre d'améliorations
+  const starsToActivate = Math.floor(numberOfUpgrades / starThresholds[upgradeType]);
+
+  // Boucler pour activer/désactiver les étoiles
   starIcons.forEach((star, index) => {
-    if (index < numberOfUpgrades) {
-      star.classList.add('active-star'); // Allume l'étoile si le nombre d'améliorations le permet
+    if (index < starsToActivate) {
+      star.classList.add('active-star', 'gold-star'); // Allume l'étoile
     } else {
-      star.classList.remove('active-star'); // Éteint l'étoile si ce n'est pas encore atteint
+      star.classList.remove('active-star', 'gold-star'); // Éteint l'étoile
     }
   });
 }
+
 
 // MATEUSZXSimulation de données (tu peux ajuster en fonction de la progression)
 let cursors = 3; // Exemple : l'utilisateur possède 3 curseurs
