@@ -439,14 +439,14 @@ span {
     filter: brightness(1.5); /* Rend l'étoile plus lumineuse */
   }
 /* MATEUSZ Style pour la modale */
-.modal {
+.stats-modal {
     display: none; /* Masqué par défaut */
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan semi-transparent */
   }
   
