@@ -2,6 +2,26 @@
 
 let clickCookie = 0;
 let cookieMultiplieur = 1;
+let Cps = 0;
+
+// constructions
+
+let curseur = 0;
+let gm = 0;
+let ferme = 0;
+let usine = 0;
+let automaticClicks = 0;
+let curseurPrice = 10;
+let gmPrice = 50;
+let fermePrice = 100;
+let usinePrice = 500;
+
+// upgrades
+
+let multiplieurCursor = 1;
+let multiplieurGm = 1;
+let multiplieurFarm = 1;
+let multiplieurUsine = 1;
 
 // FONCTIONS
 
@@ -96,25 +116,16 @@ toggleStatsButton.addEventListener("click", function () {
 
 // AURELIA
 
-let curseur = 0;
-let gm = 0;
-let ferme = 0;
-let usine = 0;
-let automaticClicks = 0;
-let curseurPrice = 10;
-let gmPrice = 50;
-let fermePrice = 100;
-let usinePrice = 500;
-
 const buttonCurseur = document.querySelector("#buttonCurseur");
-
 buttonCurseur.addEventListener("click", () => {
   if (clickCookie >= curseurPrice) {
     curseur += 1;
     clickCookie -= curseurPrice;
     document.getElementById("nbrCurseur").innerHTML = curseur;
-    automaticClicks += 1;
+    automaticClicks += 1 * multiplieurCursor;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    curseurPrice = curseurPrice + 2;
+    document.getElementById("curseurPrice").innerHTML = curseurPrice + "🍪";
   }
 });
 
@@ -125,8 +136,10 @@ buttonGm.addEventListener("click", () => {
     gm += 1;
     clickCookie -= gmPrice;
     document.getElementById("nbrGm").innerHTML = gm;
-    automaticClicks += 5;
+    automaticClicks += 5 * multiplieurGm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    gmPrice = gmPrice + 5;
+    document.getElementById("gmPrice").innerHTML = gmPrice + "🍪";
   }
 });
 
@@ -137,8 +150,10 @@ buttonFerme.addEventListener("click", () => {
     ferme += 1;
     clickCookie -= fermePrice;
     document.getElementById("nbrFerme").innerHTML = ferme;
-    automaticClicks += 10;
+    automaticClicks += 10 * multiplieurFarm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    fermePrice = fermePrice + 10;
+    document.getElementById("fermePrice").innerHTML = fermePrice + "🍪";
   }
 });
 
@@ -149,15 +164,18 @@ buttonUsine.addEventListener("click", () => {
     usine += 1;
     clickCookie -= usinePrice;
     document.getElementById("nbrUsine").innerHTML = usine;
-    automaticClicks += 20;
+    automaticClicks += 20 * multiplieurUsine;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    usinePrice = usinePrice + 50;
+    document.getElementById("usinePrice").innerHTML = usinePrice + "🍪";
   }
 });
 
 // Fonction clics automatiques
 function automaticClick() {
-  clickCookie += automaticClicks * cookieMultiplieur;
+  clickCookie += automaticClicks;
   document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  document.getElementById("nombreDeCookiesSeconde").innerHTML = automaticClicks;
 }
 
 setInterval(automaticClick, 1000);
