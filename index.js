@@ -124,8 +124,6 @@ buttonCurseur.addEventListener("click", () => {
     document.getElementById("nbrCurseur").innerHTML = curseur;
     automaticClicks += 1 * multiplieurCursor;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    curseurPrice = curseurPrice + 2;
-    document.getElementById("curseurPrice").innerHTML = curseurPrice + "🍪";
   }
 });
 
@@ -138,8 +136,6 @@ buttonGm.addEventListener("click", () => {
     document.getElementById("nbrGm").innerHTML = gm;
     automaticClicks += 5 * multiplieurGm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    gmPrice = gmPrice + 5;
-    document.getElementById("gmPrice").innerHTML = gmPrice + "🍪";
   }
 });
 
@@ -152,8 +148,6 @@ buttonFerme.addEventListener("click", () => {
     document.getElementById("nbrFerme").innerHTML = ferme;
     automaticClicks += 10 * multiplieurFarm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    fermePrice = fermePrice + 10;
-    document.getElementById("fermePrice").innerHTML = fermePrice + "🍪";
   }
 });
 
@@ -166,12 +160,10 @@ buttonUsine.addEventListener("click", () => {
     document.getElementById("nbrUsine").innerHTML = usine;
     automaticClicks += 20 * multiplieurUsine;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    usinePrice = usinePrice + 50;
-    document.getElementById("usinePrice").innerHTML = usinePrice + "🍪";
   }
 });
 
-// Fonction clics automatiques
+// MATEUSZ Fonction clics automatiques
 function automaticClick() {
   clickCookie += automaticClicks;
   document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
@@ -179,3 +171,70 @@ function automaticClick() {
 }
 
 setInterval(automaticClick, 1000);
+
+// MATEUSZ Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
+function updateStars(upgradeType, numberOfUpgrades) {
+  const starIcons = document.querySelectorAll(`.${upgradeType} .star-icon`);
+  starIcons.forEach((star, index) => {
+    if (index < numberOfUpgrades) {
+      star.classList.add('active-star'); // Allume l'étoile si le nombre d'améliorations le permet
+    } else {
+      star.classList.remove('active-star'); // Éteint l'étoile si ce n'est pas encore atteint
+    }
+  });
+}
+
+// MATEUSZXSimulation de données (tu peux ajuster en fonction de la progression)
+let cursors = 3; // Exemple : l'utilisateur possède 3 curseurs
+let grandMeres = 4; // L'utilisateur possède 4 grand-mères
+let fermes = 2; // L'utilisateur possède 2 fermes
+let usines = 1; // L'utilisateur possède 1 usine
+
+// MATEUSZ Appel de la fonction d'allumage des étoiles pour chaque type d'amélioration
+updateStars('curseur', cursors);
+updateStars('grand-mère', grandMeres);
+updateStars('ferme', fermes);
+updateStars('usine', usines);
+
+// MATEUSZ Variables pour les statistiques
+let totalCookies = 0;
+let totalClicks = 0;
+let goldenClicks = 0;
+let cookiesPerClick = 1;
+
+// MATEUSZ Mettre à jour les statistiques dans la modale
+function updateModalStats() {
+  document.getElementById("modal-total-cookies").textContent = totalCookies;
+  document.getElementById("modal-total-buildings").textContent = curseur + gm + ferme + usine;
+  document.getElementById("modal-cookies-per-click").textContent = cookiesPerClick;
+  document.getElementById("modal-total-clicks").textContent = totalClicks;
+  document.getElementById("modal-golden-clicks").textContent = goldenClicks;
+}
+
+// MATEUSZ Afficher la modale
+const modal = document.getElementById("stats-modal");
+const closeBtn = document.querySelector(".close");
+
+document.getElementById('toggle-stats').addEventListener('click', function() {
+  updateModalStats(); // Met à jour les statistiques avant d'afficher la modale
+  modal.style.display = "block"; // Affiche la modale
+});
+
+// MATEUSZ Fermer la modale quand on clique sur le bouton de fermeture
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+};
+
+// MATEUSZ Fermer la modale quand on clique en dehors de celle-ci
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// MATEUSZ Augmenter le nombre total de cookies et de clics
+buttonClick.addEventListener("click", () => {
+  totalClicks += 1;
+  totalCookies += cookiesPerClick;
+  document.getElementById("nombreDeCookiesBanque").innerHTML = totalCookies;
+});
