@@ -1,7 +1,7 @@
 // VARIABLES
 
 let clickCookie = 0;
-let cookieMultiplieur = 1000;
+let cookieMultiplieur = 1;
 let Cps = 0;
 
 // constructions
@@ -163,7 +163,7 @@ buttonUsine.addEventListener("click", () => {
   }
 });
 
-// Fonction clics automatiques
+// MATEUSZ Fonction clics automatiques
 function automaticClick() {
   clickCookie += automaticClicks;
   document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
