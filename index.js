@@ -23,6 +23,11 @@ let multiplieurGm = 1;
 let multiplieurFarm = 1;
 let multiplieurUsine = 1;
 
+// statistiques
+
+let totalCookies = 0;
+let cookiesPerClick = 1;
+
 // FONCTIONS
 
 // KONAMI CODE
@@ -101,20 +106,7 @@ buttonClick.addEventListener("click", () => {
   document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
 });
 
-// Mateusz
-
-const toggleStatsButton = document.getElementById("toggle-stats");
-const statsMenu = document.getElementById("stats-menu");
-
-toggleStatsButton.addEventListener("click", function () {
-  if (statsMenu.style.display === "none" || statsMenu.style.display === "") {
-    statsMenu.style.display = "block"; // Affiche le menu
-  } else {
-    statsMenu.style.display = "none"; // Cache le menu
-  }
-});
-
-// AURELIA
+// CONSTRUCTIONS
 
 const buttonCurseur = document.querySelector("#buttonCurseur");
 buttonCurseur.addEventListener("click", () => {
@@ -124,8 +116,6 @@ buttonCurseur.addEventListener("click", () => {
     document.getElementById("nbrCurseur").innerHTML = curseur;
     automaticClicks += 1 * multiplieurCursor;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    // Mateusz Mise a jour les étoiles après l'achat
-    updateStars('curseur', curseur);
   }
 });
 
@@ -138,8 +128,6 @@ buttonGm.addEventListener("click", () => {
     document.getElementById("nbrGm").innerHTML = gm;
     automaticClicks += 5 * multiplieurGm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    // Mateusz Mise a jour les étoiles après l'achat
-    updateStars('grand-mère', gm);
   }
 });
 
@@ -152,8 +140,6 @@ buttonFerme.addEventListener("click", () => {
     document.getElementById("nbrFerme").innerHTML = ferme;
     automaticClicks += 10 * multiplieurFarm;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-   //Mateusz  Met à jour les étoiles pour les fermes
-    updateStars('ferme', ferme);
   }
 });
 
@@ -166,8 +152,6 @@ buttonUsine.addEventListener("click", () => {
     document.getElementById("nbrUsine").innerHTML = usine;
     automaticClicks += 20 * multiplieurUsine;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    // Mateusz Met à jour les étoiles pour les usines
-    updateStars('usine', usine);
   }
 });
 
@@ -180,7 +164,9 @@ function automaticClick() {
 
 setInterval(automaticClick, 1000);
 
-// MATEUSZ Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
+// UPGRADES
+
+// Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
 function updateStars(upgradeType, numberOfUpgrades) {
   // Définir les seuils d'allumage des étoiles
   const starThresholds = {
@@ -202,14 +188,13 @@ function updateStars(upgradeType, numberOfUpgrades) {
 
   // Boucler pour activer/désactiver les étoiles
   starIcons.forEach((star, index) => {
-    if (index < starsToActivate) {
-      star.classList.add('active-star', 'gold-star'); // Allume l'étoile
+    if (index < numberOfUpgrades) {
+      star.classList.add('active-star'); // Allume l'étoile si le nombre d'améliorations le permet
     } else {
-      star.classList.remove('active-star', 'gold-star'); // Éteint l'étoile
+      star.classList.remove('active-star'); // Éteint l'étoile si ce n'est pas encore atteint
     }
   });
 }
-
 
 // MATEUSZXSimulation de données (tu peux ajuster en fonction de la progression)
 let cursors = 3; // Exemple : l'utilisateur possède 3 curseurs
@@ -218,50 +203,51 @@ let fermes = 2; // L'utilisateur possède 2 fermes
 let usines = 1; // L'utilisateur possède 1 usine
 
 // MATEUSZ Appel de la fonction d'allumage des étoiles pour chaque type d'amélioration
-updateStars('curseur', cursors);
-updateStars('grand-mère', grandMeres);
-updateStars('ferme', fermes);
-updateStars('usine', usines);
+updateStars("curseur", curseur);
+updateStars("grand-mère", gm);
+updateStars("ferme", ferme);
+updateStars("usine", usine);
 
-// MATEUSZ Variables pour les statistiques
-let totalCookies = 0;
-let totalClicks = 0;
-let goldenClicks = 0;
-let cookiesPerClick = 1;
+// STATISTIQUES
+
+const toggleStatsButton = document.getElementById("toggle-stats");
+const statsMenu = document.getElementById("stats-menu");
+
+toggleStatsButton.addEventListener("click", function () {
+  if (statsMenu.style.display === "none" || statsMenu.style.display === "") {
+    statsMenu.style.display = "block"; // Affiche le menu
+  } else {
+    statsMenu.style.display = "none"; // Cache le menu
+  }
+});
 
 // MATEUSZ Mettre à jour les statistiques dans la modale
 function updateModalStats() {
   document.getElementById("modal-total-cookies").textContent = totalCookies;
-  document.getElementById("modal-total-buildings").textContent = curseur + gm + ferme + usine;
-  document.getElementById("modal-cookies-per-click").textContent = cookiesPerClick;
+  document.getElementById("modal-total-buildings").textContent =
+    curseur + gm + ferme + usine;
+  document.getElementById("modal-cookies-per-click").textContent =
+    cookiesPerClick;
   document.getElementById("modal-total-clicks").textContent = totalClicks;
-  document.getElementById("modal-golden-clicks").textContent = goldenClicks;
 }
 
 // MATEUSZ Afficher la modale
 const modal = document.getElementById("stats-modal");
 const closeBtn = document.querySelector(".close");
 
-document.getElementById('toggle-stats').addEventListener('click', function() {
+document.getElementById("toggle-stats").addEventListener("click", function () {
   updateModalStats(); // Met à jour les statistiques avant d'afficher la modale
   modal.style.display = "block"; // Affiche la modale
 });
 
 // MATEUSZ Fermer la modale quand on clique sur le bouton de fermeture
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
   modal.style.display = "none";
 };
 
 // MATEUSZ Fermer la modale quand on clique en dehors de celle-ci
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
-
-// MATEUSZ Augmenter le nombre total de cookies et de clics
-buttonClick.addEventListener("click", () => {
-  totalClicks += 1;
-  totalCookies += cookiesPerClick;
-  document.getElementById("nombreDeCookiesBanque").innerHTML = totalCookies;
-});
