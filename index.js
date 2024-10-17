@@ -176,7 +176,27 @@ setInterval(automaticClick, 1000);
 
 // Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
 function updateStars(upgradeType, numberOfUpgrades) {
+  // Définir les seuils d'allumage des étoiles
+  const starThresholds = {
+    curseur: 10, // Une étoile tous les 10 curseurs
+    "grand-mère": 5, // Une étoile tous les 5 grand-mères
+    ferme: 3, // Une étoile tous les 3 fermes
+    usine: 2, // Une étoile tous les 2 usines
+  };
+
+  // Récupérer les étoiles de l'amélioration correspondante
   const starIcons = document.querySelectorAll(`.${upgradeType} .star-icon`);
+  // Si aucun starIcons n'est trouvé, arrête la fonction
+  if (starIcons.length === 0) {
+    console.error(`Pas d'étoiles trouvées pour ${upgradeType}`);
+    return;
+  }
+  // Calculer combien d'étoiles doivent être allumées en fonction du nombre d'améliorations
+  const starsToActivate = Math.floor(
+    numberOfUpgrades / starThresholds[upgradeType]
+  );
+
+  // Boucler pour activer/désactiver les étoiles
   starIcons.forEach((star, index) => {
     if (index < numberOfUpgrades) {
       star.classList.add("active-star"); // Allume l'étoile si le nombre d'améliorations le permet
@@ -185,6 +205,12 @@ function updateStars(upgradeType, numberOfUpgrades) {
     }
   });
 }
+
+// MATEUSZXSimulation de données (tu peux ajuster en fonction de la progression)
+let cursors = 3; // Exemple : l'utilisateur possède 3 curseurs
+let grandMeres = 4; // L'utilisateur possède 4 grand-mères
+let fermes = 2; // L'utilisateur possède 2 fermes
+let usines = 1; // L'utilisateur possède 1 usine
 
 // MATEUSZ Appel de la fonction d'allumage des étoiles pour chaque type d'amélioration
 updateStars("curseur", curseur);

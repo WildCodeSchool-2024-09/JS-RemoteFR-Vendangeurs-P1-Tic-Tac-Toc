@@ -12,7 +12,10 @@
 	--header-color-light: rgb(212, 212, 212);
 	--header-color-dark: #1F1B18;
 }
-
+/* 
+body {
+	overflow-x: hidden; 
+} */
 /* HEADER  */
 
 /* DARK MODE  */
@@ -435,6 +438,8 @@ span {
 /* MATEUSZ Style pour les étoiles allumées */
 .active-star {
     filter: brightness(1.5); /* Rend l'étoile plus lumineuse */
+    fill: gold; /* Change la couleur de l'étoile en doré */
+    filter: hue-rotate(45deg) brightness(1.5); /* Effet doré et lumineux */
   }
 /* MATEUSZ Style pour la modale */
 .stats-modal {
