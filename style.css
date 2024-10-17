@@ -12,7 +12,10 @@
 	--header-color-light: rgb(212, 212, 212);
 	--header-color-dark: #1F1B18;
 }
-
+/* 
+body {
+	overflow-x: hidden; 
+} */
 /* HEADER  */
 
 /* DARK MODE  */
