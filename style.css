@@ -12,10 +12,7 @@
 	--header-color-light: rgb(212, 212, 212);
 	--header-color-dark: #1F1B18;
 }
-/* 
-body {
-	overflow-x: hidden; 
-} */
+
 /* HEADER  */
 
 /* DARK MODE  */
@@ -64,7 +61,7 @@ header.darkmode {
 	color: var(--text-color-dark);
 }
 
-.hautHeader {
+.highHeader {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -205,7 +202,7 @@ h3 {
 	text-align: center;
 }
 
-#cookieBouton {
+#cookieButton {
 	border-radius: 50%;
 	border: 0;
 	background-color: rgba(255, 0, 0, 0);
@@ -214,11 +211,11 @@ h3 {
   margin-bottom: 5rem;
 }
 
-#cookieBouton:active {
+#cookieButton:active {
 	transform: scale(1.05);
 }
 
-#cookieBouton img {
+#cookieButton img {
 	width: 90%;
 }
 
@@ -227,7 +224,7 @@ h3 {
 .image {
 	width: 50%;
 }
-.grand_mere h3 {
+.grandma h3 {
   font-size: 1.5rem;
 }
 
@@ -237,7 +234,7 @@ h3 {
 	flex-direction: column;
 	gap: 1.5rem;
 }
-.container_carte {
+.container_card {
 	width: 80%;
 	margin: 0 auto;
 	background-color: #f8eab8;
@@ -245,10 +242,10 @@ h3 {
   box-shadow: 10px 10px 20px #614329;
 }
 
-.container_carte:hover {
+.container_card:hover {
 	background-color: #ddc982;
 }
-.carte {
+.card {
 	width: 60%;
 	margin: 0 auto;
 	display: flex;
@@ -257,11 +254,11 @@ h3 {
 	margin-top: 1.5rem;
   color: #1F1B18;
 }
-.carte p {
+.card p {
 	font-size: 2rem;
 }
 
-.grand_mere button {
+.grandma button {
   border: none;
   padding-bottom: 1rem;
 }
@@ -290,12 +287,15 @@ span {
 /* MATEUSZ  */
 
 /* Contenu principal */
+<<<<<<< Updated upstream
 .main-content {
 	flex-grow: 1; /* Occupe l'espace restant au-dessus des améliorations */
 }
 
 /* Layout pour aligner le titre à gauche et les améliorations à droite */
 
+=======
+>>>>>>> Stashed changes
 
 .upgrade-layout h3 {
 	font-size: 1.5rem;
@@ -320,61 +320,6 @@ span {
 }
 }
 
-/* Style des éléments */
-.upgrades-section .upgrade {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.upgrades-section .upgrade-icon {
-	width: 50px;
-	height: 50px;
-}
-
-/* Bouton centré en dessous */
-#toggle-stats {
-	width: 200px;
-	padding: 10px 20px;
-	background-color: #abadab;
-	color: white;
-	border: none;
-	cursor: pointer;
-	border-radius: 5px;
-	margin: 20px auto 80px auto;
-	display: block;
-}
-/* Style du menu déroulant */
-#stats-menu {
-	display: none; /* Caché par défaut */
-	background-color: #f7f7f7;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	position: relative;
-	width: 200px; /* Ajuste la largeur du menu */
-	margin-top: 10px;
-}
-
-#stats-menu ul {
-	list-style-type: none; /* Retire les puces de liste */
-	padding: 0;
-	margin: 0;
-}
-
-#stats-menu ul li {
-	margin-bottom: 10px;
-}
-
-#stats {
-	display: none;
-	text-align: center;
-}
-
-.hidden {
-	display: none;
-}
-
 /* Style pour le footer */
 .footer {
 	width: 100%;
@@ -382,10 +327,15 @@ span {
 	color: var(--header-color-light);
 	text-align: center;
 	padding: 10px 0;
+<<<<<<< Updated upstream
 
+=======
+	margin-top: 3rem;
+>>>>>>> Stashed changes
 }
 
 /* Style pour le conteneur des étoiles avec disposition en grille */
+
 .stars {
 	display: grid;
 	grid-template-columns: repeat(5, 20px); /* Crée 5 colonnes pour aligner les étoiles */
@@ -395,7 +345,7 @@ span {
 	margin-top: 5px;
 }
 
-/* Positionnement des étoiles sur la première ligne */
+Positionnement des étoiles sur la première ligne
 .stars img:nth-child(1) {
 	grid-column: 1; /* Place la 1ère étoile dans la 1ère colonne */
 	grid-row: 1; /* Sur la première ligne */
@@ -422,12 +372,8 @@ span {
 	grid-row: 2; /* Sur la deuxième ligne */
 }
 
-/* Style pour les icônes d'étoile */
-.star-icon {
-	width: 20px;
-	height: 20px;
-}
 
+<<<<<<< Updated upstream
 /* MATEUSZ Style pour les étoiles allumées */
 .active-star {
     filter: brightness(1.5); /* Rend l'étoile plus lumineuse */
@@ -482,3 +428,5 @@ span {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 0.8rem;
   }
+=======
+>>>>>>> Stashed changes

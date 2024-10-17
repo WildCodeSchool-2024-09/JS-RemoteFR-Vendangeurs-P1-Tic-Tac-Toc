@@ -1,7 +1,7 @@
 // VARIABLES
 
 let clickCookie = 0;
-let cookieMultiplier = 1;
+let cookieMultiplier = 100000;
 let Cps = 0;
 
 // constructions
@@ -22,11 +22,6 @@ let multiplierCursor = 1;
 let multiplierGm = 1;
 let multiplierFarm = 1;
 let multiplierFactory = 1;
-
-// statistiques
-
-let totalCookies = 0;
-let cookiesPerClick = 1;
 
 // FONCTIONS
 
@@ -201,7 +196,7 @@ buttonFarm.addEventListener("click", () => {
     clickCookie -= farmPrice;
     document.getElementById("farmNbr").innerHTML = farm;
     automaticClicks += 10 * multiplierFarm;
-    document.getElementById("CookiesInBank").innerHTML = clickCookie;
+    document.getElementById("cookiesInBank").innerHTML = clickCookie;
     farmPrice = farmPrice + 10;
     document.getElementById("farmPrice").innerHTML = farmPrice + "🍪";
     if (farm >= 10) {
@@ -242,9 +237,9 @@ buttonFactory.addEventListener("click", () => {
   if (clickCookie >= factoryPrice) {
     factory += 1;
     clickCookie -= factoryPrice;
-    document.getElementById("nbrFactory").innerHTML = factory;
+    document.getElementById("factoryNbr").innerHTML = factory;
     automaticClicks += 20 * multiplierFactory;
-    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    document.getElementById("cookiesInBank").innerHTML = clickCookie;
     factoryPrice = factoryPrice + 50;
     document.getElementById("factoryPrice").innerHTML = factoryPrice + "🍪";
     if (factory >= 10) {
@@ -287,47 +282,3 @@ function automaticClick() {
 }
 
 setInterval(automaticClick, 1000);
-
-// STATISTIQUES
-
-const toggleStatsButton = document.getElementById("toggle-stats");
-const statsMenu = document.getElementById("stats-menu");
-
-toggleStatsButton.addEventListener("click", function () {
-  if (statsMenu.style.display === "none" || statsMenu.style.display === "") {
-    statsMenu.style.display = "block"; // Affiche le menu
-  } else {
-    statsMenu.style.display = "none"; // Cache le menu
-  }
-});
-
-// MATEUSZ Mettre à jour les statistiques dans la modale
-function updateModalStats() {
-  document.getElementById("modal-total-cookies").textContent = totalCookies;
-  document.getElementById("modal-total-constructions").textContent =
-    curseur + gm + ferme + usine;
-  document.getElementById("modal-cookies-per-click").textContent =
-    cookiesPerClick;
-  document.getElementById("modal-total-clicks").textContent = totalClicks;
-}
-
-// MATEUSZ Afficher la modale
-const modal = document.getElementById("stats-modal");
-const closeBtn = document.querySelector(".close");
-
-document.getElementById("toggle-stats").addEventListener("click", function () {
-  updateModalStats(); // Met à jour les statistiques avant d'afficher la modale
-  modal.style.display = "block"; // Affiche la modale
-});
-
-// MATEUSZ Fermer la modale quand on clique sur le bouton de fermeture
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
-// MATEUSZ Fermer la modale quand on clique en dehors de celle-ci
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
