@@ -1,7 +1,7 @@
 // VARIABLES
 
 let clickCookie = 0;
-let cookieMultiplier = 100000;
+let cookieMultiplier = 1;
 let Cps = 0;
 
 // constructions
@@ -120,23 +120,23 @@ buttonCursor.addEventListener("click", () => {
 
       if (cursor >= 20) {
         const img = document.querySelector("#star-icon2");
-        multiplierCursor = 3;
         img.src = "./assets/img/upgrades/ShinyStar.svg";
+        multiplierCursor = 3;
 
         if (cursor >= 50) {
           const img = document.querySelector("#star-icon3");
-          multiplierCursor = 5;
           img.src = "./assets/img/upgrades/ShinyStar.svg";
+          multiplierCursor = 5;
 
           if (cursor >= 100) {
             const img = document.querySelector("#star-icon4");
-            multiplierCursor = 10;
             img.src = "./assets/img/upgrades/ShinyStar.svg";
+            multiplierCursor = 10;
 
-            if (curseor >= 500) {
+            if (cursor >= 500) {
               const img = document.querySelector("#star-icon5");
-              multiplierCursor = 20;
               img.src = "./assets/img/upgrades/ShinyStar.svg";
+              multiplierCursor = 20;
             }
           }
         }
@@ -163,23 +163,23 @@ buttonGm.addEventListener("click", () => {
 
       if (gm >= 20) {
         const img = document.querySelector("#star-icon7");
-        multiplierGm = 3;
         img.src = "./assets/img/upgrades/ShinyStar.svg";
+        multiplierGm = 3;
 
         if (gm >= 50) {
           const img = document.querySelector("#star-icon8");
-          multiplierGm = 5;
           img.src = "./assets/img/upgrades/ShinyStar.svg";
+          multiplierGm = 5;
 
           if (gm >= 100) {
             const img = document.querySelector("#star-icon9");
-            multiplierGm = 10;
             img.src = "./assets/img/upgrades/ShinyStar.svg";
+            multiplierGm = 10;
 
             if (gm >= 500) {
               const img = document.querySelector("#star-icon10");
-              multiplierGm = 20;
               img.src = "./assets/img/upgrades/ShinyStar.svg";
+              multiplierGm = 20;
             }
           }
         }
@@ -206,23 +206,23 @@ buttonFarm.addEventListener("click", () => {
 
       if (farm >= 20) {
         const img = document.querySelector("#star-icon12");
-        multiplierFarm = 3;
         img.src = "./assets/img/upgrades/ShinyStar.svg";
+        multiplierFarm = 3;
 
         if (farm >= 50) {
           const img = document.querySelector("#star-icon13");
-          multiplierFarm = 5;
           img.src = "./assets/img/upgrades/ShinyStar.svg";
+          multiplierFarm = 5;
 
           if (farm >= 100) {
             const img = document.querySelector("#star-icon14");
-            multiplierFarm = 10;
             img.src = "./assets/img/upgrades/ShinyStar.svg";
+            multiplierFarm = 10;
 
             if (farm >= 500) {
               const img = document.querySelector("#star-icon15");
-              multiplierFarm = 20;
               img.src = "./assets/img/upgrades/ShinyStar.svg";
+              multiplierFarm = 20;
             }
           }
         }
@@ -249,23 +249,23 @@ buttonFactory.addEventListener("click", () => {
 
       if (factory >= 20) {
         const img = document.querySelector("#star-icon17");
-        multiplierFactory = 3;
         img.src = "./assets/img/upgrades/ShinyStar.svg";
+        multiplierFactory = 3;
 
         if (factory >= 50) {
           const img = document.querySelector("#star-icon18");
-          multiplierFactory = 5;
           img.src = "./assets/img/upgrades/ShinyStar.svg";
+          multiplierFactory = 5;
 
           if (factory >= 100) {
             const img = document.querySelector("#star-icon19");
-            multiplierFactory = 10;
             img.src = "./assets/img/upgrades/ShinyStar.svg";
+            multiplierFactory = 10;
 
             if (factory >= 500) {
               const img = document.querySelector("#star-icon20");
-              multiplierFactory = 20;
               img.src = "./assets/img/upgrades/ShinyStar.svg";
+              multiplierFactory = 20;
             }
           }
         }

@@ -1,16 +1,16 @@
 * {
 	box-sizing: border-box;
-	font-family: "Kavoon";
+	font-family: "Kavoon", sans-serif;
 }
 /* VARIABLES  */
 
 :root {
 	--main-color-light: #f9e9d6;
 	--text-color-light: black;
-	--main-color-dark: #1F1B18;
+	--main-color-dark: #1f1b18;
 	--text-color-dark: whitesmoke;
 	--header-color-light: rgb(212, 212, 212);
-	--header-color-dark: #1F1B18;
+	--header-color-dark: #1f1b18;
 }
 
 /* HEADER  */
@@ -27,7 +27,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #8D6038;
+	background-color: #8d6038;
 	border-radius: 50%;
 	width: 50px;
 	height: 50px;
@@ -36,7 +36,7 @@ body {
 }
 
 #theme-switch svg {
-	fill: #FEEAA1;
+	fill: #feeaa1;
 }
 
 #theme-switch svg:last-child {
@@ -65,9 +65,9 @@ header.darkmode {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+	padding-top: 2rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 .modales {
@@ -85,8 +85,8 @@ header.darkmode {
 	border-radius: 10px;
 	cursor: pointer;
 	transition: 0.3 all ease-in-out;
-	background-color: #8D6038;
-	color: #FEEAA1;
+	background-color: #8d6038;
+	color: #feeaa1;
 }
 
 #open_modal_button:hover {
@@ -125,7 +125,7 @@ header.darkmode {
 
 .modal--open {
 	transform: translate(-50%, -50%);
-  color: whitesmoke;
+	color: whitesmoke;
 }
 
 #modal_close {
@@ -157,14 +157,14 @@ header.darkmode {
 	padding: 10px 20px;
 	border: none;
 	border-radius: 10px;
-	color: #1F1B18;
+	color: #1f1b18;
 	cursor: pointer;
 	transition: 0.3 all ease-in-out;
-	background-color: #FEEAA1;
+	background-color: #feeaa1;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .modal_footer_button:hover {
-	background-color: #CFBB74;
+	background-color: #cfbb74;
 }
 
 .modal--open {
@@ -208,7 +208,7 @@ h3 {
 	background-color: rgba(255, 0, 0, 0);
 	width: 100%;
 	margin: 0;
-  margin-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 
 #cookieButton:active {
@@ -225,7 +225,7 @@ h3 {
 	width: 50%;
 }
 .grandma h3 {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 /* cartes */
@@ -239,7 +239,7 @@ h3 {
 	margin: 0 auto;
 	background-color: #f8eab8;
 	border-radius: 40px;
-  box-shadow: 10px 10px 20px #614329;
+	box-shadow: 10px 10px 20px #614329;
 }
 
 .container_card:hover {
@@ -252,23 +252,22 @@ h3 {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 1.5rem;
-  color: #1F1B18;
+	color: #1f1b18;
 }
 .card p {
 	font-size: 2rem;
 }
 
 .grandma button {
-  border: none;
-  padding-bottom: 1rem;
+	border: none;
+	padding-bottom: 1rem;
 }
 
 span {
 	display: flex;
 	justify-content: center;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
 }
 
 .upgrade.darkmode {
@@ -287,20 +286,10 @@ span {
 /* MATEUSZ  */
 
 /* Contenu principal */
-<<<<<<< Updated upstream
-.main-content {
-	flex-grow: 1; /* Occupe l'espace restant au-dessus des améliorations */
-}
-
-/* Layout pour aligner le titre à gauche et les améliorations à droite */
-
-=======
->>>>>>> Stashed changes
 
 .upgrade-layout h3 {
 	font-size: 1.5rem;
 	text-align: center;
-	margin-bottom: 10px; /* Un petit espace sous le titre */
 	margin: 4rem 0;
 }
 
@@ -312,26 +301,21 @@ span {
 	gap: 20px;
 	padding-bottom: 3rem;
 
-	   /* RESPONSIVE  */
+	/* RESPONSIVE  */
 
-@media screen and (min-width: 992px) {
-	width: 100%;
-	flex-direction: row;
-}
+	@media screen and (min-width: 992px) {
+		width: 100%;
+		flex-direction: row;
+	}
 }
 
 /* Style pour le footer */
 .footer {
 	width: 100%;
-	background-color: #1F1B18;
+	background-color: #1f1b18;
 	color: var(--header-color-light);
 	text-align: center;
 	padding: 10px 0;
-<<<<<<< Updated upstream
-
-=======
-	margin-top: 3rem;
->>>>>>> Stashed changes
 }
 
 /* Style pour le conteneur des étoiles avec disposition en grille */
@@ -345,8 +329,7 @@ span {
 	margin-top: 5px;
 }
 
-Positionnement des étoiles sur la première ligne
-.stars img:nth-child(1) {
+Positionnement des étoiles sur la première ligne .stars img:nth-child(1) {
 	grid-column: 1; /* Place la 1ère étoile dans la 1ère colonne */
 	grid-row: 1; /* Sur la première ligne */
 }
@@ -372,61 +355,14 @@ Positionnement des étoiles sur la première ligne
 	grid-row: 2; /* Sur la deuxième ligne */
 }
 
-
-<<<<<<< Updated upstream
-/* MATEUSZ Style pour les étoiles allumées */
-.active-star {
-    filter: brightness(1.5); /* Rend l'étoile plus lumineuse */
-    fill: gold; /* Change la couleur de l'étoile en doré */
-    filter: hue-rotate(45deg) brightness(1.5); /* Effet doré et lumineux */
-  }
-/* MATEUSZ Style pour la modale */
-.stats-modal {
-    display: none; /* Masqué par défaut */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan semi-transparent */
-  }
-  
-  .modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .gratitude {
+.gratitude {
 	display: flex;
 	justify-content: center;
 	gap: 1rem;
 	margin: 1rem;
-  }
+}
 
-  .gratitude span {
+.gratitude span {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 0.8rem;
-  }
-=======
->>>>>>> Stashed changes
+}
