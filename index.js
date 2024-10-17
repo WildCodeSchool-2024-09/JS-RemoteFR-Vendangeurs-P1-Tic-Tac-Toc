@@ -1,27 +1,27 @@
 // VARIABLES
 
 let clickCookie = 0;
-let cookieMultiplieur = 1;
+let cookieMultiplier = 1;
 let Cps = 0;
 
 // constructions
 
-let curseur = 0;
+let cursor = 0;
 let gm = 0;
-let ferme = 0;
-let usine = 0;
+let farm = 0;
+let factory = 0;
 let automaticClicks = 0;
-let curseurPrice = 10;
+let cursorPrice = 10;
 let gmPrice = 50;
-let fermePrice = 100;
-let usinePrice = 500;
+let farmPrice = 100;
+let factoryPrice = 500;
 
 // upgrades
 
-let multiplieurCursor = 1;
-let multiplieurGm = 1;
-let multiplieurFarm = 1;
-let multiplieurUsine = 1;
+let multiplierCursor = 1;
+let multiplierGm = 1;
+let multiplierFarm = 1;
+let multiplierFactory = 1;
 
 // statistiques
 
@@ -99,25 +99,54 @@ function closeModal() {
 }
 
 // Compteur cookie
-const buttonClick = document.querySelector("#cookieBouton");
+const buttonClick = document.querySelector("#cookieButton");
 
 buttonClick.addEventListener("click", () => {
-  clickCookie += 1 * cookieMultiplieur;
-  document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+  clickCookie += 1 * cookieMultiplier;
+  document.getElementById("cookiesInBank").innerHTML = clickCookie;
 });
 
-// CONSTRUCTIONS
+// CONSTRUCTIONS + UPGRADES
 
-const buttonCurseur = document.querySelector("#buttonCurseur");
-buttonCurseur.addEventListener("click", () => {
-  if (clickCookie >= curseurPrice) {
-    curseur += 1;
-    clickCookie -= curseurPrice;
-    document.getElementById("nbrCurseur").innerHTML = curseur;
-    automaticClicks += 1 * multiplieurCursor;
-    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    curseurPrice = curseurPrice + 2;
-    document.getElementById("curseurPrice").innerHTML = curseurPrice + "🍪";
+const buttonCursor = document.querySelector("#buttonCursor");
+buttonCursor.addEventListener("click", () => {
+  if (clickCookie >= cursorPrice) {
+    cursor += 1;
+    clickCookie -= cursorPrice;
+    document.getElementById("cursorNbr").innerHTML = cursor;
+    automaticClicks += 1 * multiplierCursor;
+    document.getElementById("cookiesInBank").innerHTML = clickCookie;
+    cursorPrice = cursorPrice + 2;
+    document.getElementById("cursorPrice").innerHTML = cursorPrice + "🍪";
+    if (cursor >= 10) {
+      const img = document.querySelector("#star-icon1");
+      img.src = "./assets/img/upgrades/ShinyStar.svg";
+      multiplierCursor = 2;
+
+      if (cursor >= 20) {
+        const img = document.querySelector("#star-icon2");
+        multiplierCursor = 3;
+        img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+        if (cursor >= 50) {
+          const img = document.querySelector("#star-icon3");
+          multiplierCursor = 5;
+          img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+          if (cursor >= 100) {
+            const img = document.querySelector("#star-icon4");
+            multiplierCursor = 10;
+            img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+            if (curseor >= 500) {
+              const img = document.querySelector("#star-icon5");
+              multiplierCursor = 20;
+              img.src = "./assets/img/upgrades/ShinyStar.svg";
+            }
+          }
+        }
+      }
+    }
   }
 });
 
@@ -127,96 +156,137 @@ buttonGm.addEventListener("click", () => {
   if (clickCookie >= gmPrice) {
     gm += 1;
     clickCookie -= gmPrice;
-    document.getElementById("nbrGm").innerHTML = gm;
-    automaticClicks += 5 * multiplieurGm;
-    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
+    document.getElementById("gmNbr").innerHTML = gm;
+    automaticClicks += 5 * multiplierGm;
+    document.getElementById("cookiesInBank").innerHTML = clickCookie;
     gmPrice = gmPrice + 5;
     document.getElementById("gmPrice").innerHTML = gmPrice + "🍪";
+    if (gm >= 10) {
+      const img = document.querySelector("#star-icon6");
+      img.src = "./assets/img/upgrades/ShinyStar.svg";
+      multiplierGm = 2;
+
+      if (gm >= 20) {
+        const img = document.querySelector("#star-icon7");
+        multiplierGm = 3;
+        img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+        if (gm >= 50) {
+          const img = document.querySelector("#star-icon8");
+          multiplierGm = 5;
+          img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+          if (gm >= 100) {
+            const img = document.querySelector("#star-icon9");
+            multiplierGm = 10;
+            img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+            if (gm >= 500) {
+              const img = document.querySelector("#star-icon10");
+              multiplierGm = 20;
+              img.src = "./assets/img/upgrades/ShinyStar.svg";
+            }
+          }
+        }
+      }
+    }
   }
 });
 
-const buttonFerme = document.querySelector("#buttonFerme");
+const buttonFarm = document.querySelector("#buttonFarm");
 
-buttonFerme.addEventListener("click", () => {
-  if (clickCookie >= fermePrice) {
-    ferme += 1;
-    clickCookie -= fermePrice;
-    document.getElementById("nbrFerme").innerHTML = ferme;
-    automaticClicks += 10 * multiplieurFarm;
-    document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    fermePrice = fermePrice + 10;
-    document.getElementById("fermePrice").innerHTML = fermePrice + "🍪";
+buttonFarm.addEventListener("click", () => {
+  if (clickCookie >= farmPrice) {
+    farm += 1;
+    clickCookie -= farmPrice;
+    document.getElementById("farmNbr").innerHTML = farm;
+    automaticClicks += 10 * multiplierFarm;
+    document.getElementById("CookiesInBank").innerHTML = clickCookie;
+    farmPrice = farmPrice + 10;
+    document.getElementById("farmPrice").innerHTML = farmPrice + "🍪";
+    if (farm >= 10) {
+      const img = document.querySelector("#star-icon11");
+      img.src = "./assets/img/upgrades/ShinyStar.svg";
+      multiplierFarm = 2;
+
+      if (farm >= 20) {
+        const img = document.querySelector("#star-icon12");
+        multiplierFarm = 3;
+        img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+        if (farm >= 50) {
+          const img = document.querySelector("#star-icon13");
+          multiplierFarm = 5;
+          img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+          if (farm >= 100) {
+            const img = document.querySelector("#star-icon14");
+            multiplierFarm = 10;
+            img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+            if (farm >= 500) {
+              const img = document.querySelector("#star-icon15");
+              multiplierFarm = 20;
+              img.src = "./assets/img/upgrades/ShinyStar.svg";
+            }
+          }
+        }
+      }
+    }
   }
 });
 
-const buttonUsine = document.querySelector("#buttonUsine");
+const buttonFactory = document.querySelector("#buttonFactory");
 
-buttonUsine.addEventListener("click", () => {
-  if (clickCookie >= usinePrice) {
-    usine += 1;
-    clickCookie -= usinePrice;
-    document.getElementById("nbrUsine").innerHTML = usine;
-    automaticClicks += 20 * multiplieurUsine;
+buttonFactory.addEventListener("click", () => {
+  if (clickCookie >= factoryPrice) {
+    factory += 1;
+    clickCookie -= factoryPrice;
+    document.getElementById("nbrFactory").innerHTML = factory;
+    automaticClicks += 20 * multiplierFactory;
     document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-    usinePrice = usinePrice + 50;
-    document.getElementById("usinePrice").innerHTML = usinePrice + "🍪";
+    factoryPrice = factoryPrice + 50;
+    document.getElementById("factoryPrice").innerHTML = factoryPrice + "🍪";
+    if (factory >= 10) {
+      const img = document.querySelector("#star-icon16");
+      img.src = "./assets/img/upgrades/ShinyStar.svg";
+      multiplierFactory = 2;
+
+      if (factory >= 20) {
+        const img = document.querySelector("#star-icon17");
+        multiplierFactory = 3;
+        img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+        if (factory >= 50) {
+          const img = document.querySelector("#star-icon18");
+          multiplierFactory = 5;
+          img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+          if (factory >= 100) {
+            const img = document.querySelector("#star-icon19");
+            multiplierFactory = 10;
+            img.src = "./assets/img/upgrades/ShinyStar.svg";
+
+            if (factory >= 500) {
+              const img = document.querySelector("#star-icon20");
+              multiplierFactory = 20;
+              img.src = "./assets/img/upgrades/ShinyStar.svg";
+            }
+          }
+        }
+      }
+    }
   }
 });
 
 // MATEUSZ Fonction clics automatiques
 function automaticClick() {
   clickCookie += automaticClicks;
-  document.getElementById("nombreDeCookiesBanque").innerHTML = clickCookie;
-  document.getElementById("nombreDeCookiesSeconde").innerHTML = automaticClicks;
+  document.getElementById("cookiesInBank").innerHTML = clickCookie;
+  document.getElementById("cookiesPerSecondNbr").innerHTML = automaticClicks;
 }
 
 setInterval(automaticClick, 1000);
-
-// UPGRADES
-
-// Fonction pour mettre à jour les étoiles en fonction du nombre d'améliorations
-function updateStars(upgradeType, numberOfUpgrades) {
-  // Définir les seuils d'allumage des étoiles
-  const starThresholds = {
-    curseur: 10, // Une étoile tous les 10 curseurs
-    "grand-mère": 5, // Une étoile tous les 5 grand-mères
-    ferme: 3, // Une étoile tous les 3 fermes
-    usine: 2, // Une étoile tous les 2 usines
-  };
-
-  // Récupérer les étoiles de l'amélioration correspondante
-  const starIcons = document.querySelectorAll(`.${upgradeType} .star-icon`);
-  // Si aucun starIcons n'est trouvé, arrête la fonction
-  if (starIcons.length === 0) {
-    console.error(`Pas d'étoiles trouvées pour ${upgradeType}`);
-    return;
-  }
-  // Calculer combien d'étoiles doivent être allumées en fonction du nombre d'améliorations
-  const starsToActivate = Math.floor(
-    numberOfUpgrades / starThresholds[upgradeType]
-  );
-
-  // Boucler pour activer/désactiver les étoiles
-  starIcons.forEach((star, index) => {
-    if (index < numberOfUpgrades) {
-      star.classList.add("active-star"); // Allume l'étoile si le nombre d'améliorations le permet
-    } else {
-      star.classList.remove("active-star"); // Éteint l'étoile si ce n'est pas encore atteint
-    }
-  });
-}
-
-// MATEUSZXSimulation de données (tu peux ajuster en fonction de la progression)
-let cursors = 3; // Exemple : l'utilisateur possède 3 curseurs
-let grandMeres = 4; // L'utilisateur possède 4 grand-mères
-let fermes = 2; // L'utilisateur possède 2 fermes
-let usines = 1; // L'utilisateur possède 1 usine
-
-// MATEUSZ Appel de la fonction d'allumage des étoiles pour chaque type d'amélioration
-updateStars("curseur", curseur);
-updateStars("grand-mère", gm);
-updateStars("ferme", ferme);
-updateStars("usine", usine);
 
 // STATISTIQUES
 
@@ -234,7 +304,7 @@ toggleStatsButton.addEventListener("click", function () {
 // MATEUSZ Mettre à jour les statistiques dans la modale
 function updateModalStats() {
   document.getElementById("modal-total-cookies").textContent = totalCookies;
-  document.getElementById("modal-total-buildings").textContent =
+  document.getElementById("modal-total-constructions").textContent =
     curseur + gm + ferme + usine;
   document.getElementById("modal-cookies-per-click").textContent =
     cookiesPerClick;

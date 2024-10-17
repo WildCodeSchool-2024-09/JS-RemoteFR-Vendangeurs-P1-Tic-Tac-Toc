@@ -57,7 +57,6 @@ body {
 
 header {
 	color: var(--text-color-light);
-	width: 100vw;
 	height: 20vh;
 }
 header.darkmode {
@@ -195,7 +194,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
 	background-color: var(--main-color-light);
 }
 
